@@ -1,0 +1,21 @@
+(mod assembly)
+(use io)
+
+(static a "Hello world!
+I am sqyyy, a programmer from Germany.
+I am interested in Rust and am currently writing my own programming language.
+")
+
+(-label main (do
+  (_start)
+  (ref a)
+  (puts)
+  (halt)
+))
+
+(-label _start (do
+  (mov r0 1024u)
+  (mul r0 r0 64u)
+  (int 2u)
+  (mov r31 r0)
+))

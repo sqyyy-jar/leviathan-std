@@ -1,0 +1,5 @@
+(mod assembly)
+
+(+label alloc (int 2u)) ; (size)
+
+(+label dealloc (int 3u)) ; (*addr, size)
