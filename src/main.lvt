@@ -1,10 +1,9 @@
 (mod assembly)
 (use io)
+(use str)
 
-(static a "Hello world!
-I am sqyyy, a programmer from Germany.
-I am interested in Rust and am currently writing my own programming language.
-")
+(static a "ABC")
+(static b "ABC")
 
 (-label main (do
   (_start)
