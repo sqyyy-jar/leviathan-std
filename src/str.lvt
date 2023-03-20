@@ -37,3 +37,12 @@
   ))
   (sub r0 r2 r3)
 ))
+
+(+label strcpy (do ; (*dst, *src)
+  (do-while (do
+    (ldrb r2 r1 0)
+    (strb r0 r2 0)
+    (add r0 r0 1u)
+    (add r1 r1 1u)
+  ) !0 r2)
+))

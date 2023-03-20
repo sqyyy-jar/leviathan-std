@@ -1,6 +1,7 @@
 (mod assembly)
 (use io)
 (use str)
+(use mem)
 
 (static a "ABC")
 (static b "ABC")
@@ -8,6 +9,12 @@
 (-label main (do
   (_start)
   (ref a)
+  (mov r1 r0)
+  (mov r0 1024u)
+  (alloc)
+  (mov r8 r0)
+  (strcpy)
+  (mov r0 r8)
   (puts)
   (halt)
 ))
