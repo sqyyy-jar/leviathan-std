@@ -13,9 +13,11 @@ I am interested in Rust and am currently writing my own programming language.
   (halt)
 ))
 
+; setup stack
 (-label _start (do
   (mov r0 1024u)
   (mul r0 r0 64u)
-  (int 2u)
   (mov r31 r0)
+  (int 2u)
+  (add r31 r31 r0)
 ))
