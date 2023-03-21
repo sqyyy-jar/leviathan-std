@@ -3,3 +3,14 @@
 (+label alloc (int 2u)) ; (size)
 
 (+label dealloc (int 3u)) ; (*addr, size)
+
+(+label memmove (do ; (*dst, *src, size)
+  (mov r4 r0)
+  (while !0 r2 (do
+    (ldrb r3 r1 0)
+    (strb r4 r3 0)
+    (add r4 r4 1u)
+    (add r1 r1 1u)
+    (sub r2 r2 1u)
+  ))
+))
