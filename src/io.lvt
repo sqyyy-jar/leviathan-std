@@ -13,3 +13,15 @@
   (mov r0 1u)
   (int 1u)
 ))
+
+(static char_buf 0u)
+
+(+label putchar (do ; (char)
+  (mov r1 r0)
+  (ref char_buf)
+  (str r0 r1 0)
+  (mov r2 1u)
+  (mov r1 r0)
+  (mov r0 1u)
+  (int 1u)
+))
