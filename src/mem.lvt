@@ -14,3 +14,11 @@
     (sub r2 r2 1u)
   ))
 ))
+
+(+label memset (do ; (*str, c, n)
+  (while !0 r2 (do
+    (add r3 r0 r2)
+    (strb r3 r1 0)
+    (sub r2 r2 1u)
+  ))
+))

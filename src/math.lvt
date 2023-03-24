@@ -1,0 +1,42 @@
+(mod assembly)
+
+(+label abs (do ; (n)
+  (mov r1 0u)
+  (cmps r1 r0 r1)
+  (if < r1 (do
+    (not r0 r0)
+    (add r0 r0 1u)
+    (ret)
+  ))
+))
+
+(+label absf (do ; (n)
+  (mov r1 0u)
+  (cmpf r1 r0 r1)
+  (if < r1 (do
+    (mov r1 0u)
+    (subf r0 r1 r0)
+    (ret)
+  ))
+))
+
+; hardcoded default seed
+(static rand-seed 0x15163bf23da7cb4f)
+; https://en.wikipedia.org/wiki/Xorshift (64 variant)
+(+label rand (do
+  (ref r2 rand-seed)
+  (ldr r0 r0 0)
+  (shl r1 r0 13u)
+  (xor r0 r0 r1)
+  (shr r1 r0 7u)
+  (xor r0 r0 r1)
+  (shl r1 r0 17u)
+  (xor r0 r0 r1)
+  (mov r1 r0)
+  (str r2 r0 0)
+))
+
+(+label srand (do ; (seed)
+  (ref r1 rand-seed)
+  (str r1 r0 0)
+))
