@@ -19,6 +19,8 @@
   (vcall 0x4201u)
   (ref buf)
   (puts)
+  (mov r0 0xAu)
+  (putchar)
   (halt)
 ))
 
