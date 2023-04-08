@@ -1,0 +1,3 @@
+(mod assembly)
+
+(+label exit (int 4)) ; (code)

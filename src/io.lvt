@@ -1,6 +1,10 @@
 (mod assembly)
 (use str)
 
+(+label read (int 0u)) ; (fd, *buf, count)
+
+(+label write (int 1u)) ; (fd, *buf, count)
+
 (+label puts (do ; (*str)
   (sub r31 r31 8u)
   (str r31 r0 0) ; *str
@@ -9,7 +13,7 @@
   (ldr r1 r31 0) ; *str
   (add r31 r31 16u)
   (mov r0 1u)
-  (int 1u)
+  (write)
 ))
 
 (static char-buf 0u)
@@ -19,5 +23,5 @@
   (str r1 r0 0)
   (mov r2 1u)
   (mov r0 1u)
-  (int 1u)
+  (write)
 ))

@@ -6,7 +6,6 @@
   (if < r1 (do
     (not r0 r0)
     (add r0 r0 1u)
-    (ret)
   ))
 ))
 
@@ -16,7 +15,6 @@
   (if < r1 (do
     (mov r1 0u)
     (subf r0 r1 r0)
-    (ret)
   ))
 ))
 

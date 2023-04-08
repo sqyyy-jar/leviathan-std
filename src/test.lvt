@@ -1,0 +1,11 @@
+(mod code)
+
+;(static
+;  a "Hello world!"
+;  b 10
+;  c 10u
+;  d 1.0)
+
+;(fn main [:a int] {
+;  (println "Hello world!")
+;})

@@ -3,7 +3,7 @@
 (use str)
 (use mem)
 
-(static buf (buffer 256))
+(static buf (buffer 64))
 
 (-label main (do
   (_start)
@@ -63,6 +63,6 @@
   (mov r0 1024u)
   (mul r0 r0 64u)
   (mov r31 r0)
-  (int 2u)
+  (alloc)
   (add r31 r31 r0)
 ))
