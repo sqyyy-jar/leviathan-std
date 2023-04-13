@@ -1,4 +1,4 @@
-(mod assembly)
+(mod asm)
 
 (+label abs (do ; (n)
   (mov r1 0u)

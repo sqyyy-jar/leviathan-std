@@ -1,10 +1,14 @@
 (mod code)
 
-;(static
-;  a "Hello world!"
-;  b 10
-;  c 10u
-;  d 1.0)
+(static
+  a "Hello world!"
+  b 10
+  c 10u
+  d 1.0
+  e {16}
+  f {255 16}
+  g [1 2 3]
+)
 
 ;(fn main [:a int] {
 ;  (println "Hello world!")

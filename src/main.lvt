@@ -1,4 +1,4 @@
-(mod assembly)
+(mod asm)
 (use io)
 (use str)
 (use mem)
@@ -7,8 +7,10 @@
 
 (-label main (do
   (_start)
-  (mov r0 93u)
+  (mov r0 20u)
+  (zero r30)
   (iter-fib)
+  (dbg r30)
   (ref r1 buf)
   (mov r2 256u)
   (vcall 0x4200u)
@@ -20,6 +22,7 @@
 ))
 
 (+label fib (do ; (n)
+  (inc r30)
   (mov r1 1u)
   (cmps r2 r0 r1)
   (if <= r2 (do
@@ -49,6 +52,7 @@
   (mov r4 2u) ; i
   (cmp r5 r4 r0)
   (while <= r5 (do
+    (inc r30)
     (add r3 r1 r2)
     (mov r1 r2)
     (mov r2 r3)

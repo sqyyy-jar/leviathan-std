@@ -1,4 +1,4 @@
-(mod assembly)
+(mod asm)
 
 (+label alloc (int 2u)) ; (size)
 
